@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./home/alacritty
     ./home/git
     ./home/hyprland
     ./home/nvim
