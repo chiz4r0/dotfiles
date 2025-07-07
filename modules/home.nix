@@ -5,10 +5,12 @@
     ./home/alacritty
     ./home/git
     ./home/hyprland
-    ./home/nvim
+    #./home/nvim
+    ./home/zsh
   ];
 
   home.packages = with pkgs; [
     vscode
   ];
+
 }

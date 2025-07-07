@@ -5,6 +5,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   zramSwap.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   time.timeZone = "Asia/Jakarta";
   system.stateVersion = "25.05"; # Did you read the comment?
