@@ -216,7 +216,7 @@
         "float, title:^(Remmina Remote Desktop Client)$"
         "float, title:^(Welcome to Android Studio)$"
         "float, title:^(Virtual Machine Manager)$"
-        "noinitialfocus,class:^jetbrains-.*$,floating:1,title:^$|^\s$|^win\d+$"
+        "noinitialfocus,class:^jetbrains-.*$,floating:1,title:^$|^\\s$|^win\\d+$"
       ];
 
       workspace = [
