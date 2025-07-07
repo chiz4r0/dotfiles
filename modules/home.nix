@@ -7,6 +7,7 @@
     ./home/git
     ./home/hyprland
     ./home/nvim
+    ./home/tmux
     ./home/zsh
   ];
 

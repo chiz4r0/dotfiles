@@ -12,6 +12,7 @@
   xdg.configFile."nvim/lua/config/autocmds.lua".source = ./lazy/lua/config/autocmds.lua;
 
   xdg.configFile."nvim/lua/plugins/example.lua".source = ./lazy/lua/plugins/example.lua;
+  xdg.configFile."nvim/lua/plugins/colors.lua".source = ./lazy/lua/plugins/colors.lua;
 
   programs.neovim = {
     enable = true;
