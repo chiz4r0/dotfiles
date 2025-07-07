@@ -1,20 +1,5 @@
-{ config, pkgs, ... }:
-
+{ ... }:
 {
-  imports = [
-    ./home/git
-  ];
-
-  home.packages = with pkgs; [
-    vscode
-  ];
-
-  programs.git = {
-    enable = true;
-    userEmail = "yurandarezky@gmail.com";
-    userName = "chiz4r0";
-  };
-
   home.sessionVariables = {
     # 🖥️ Wayland & Hyprland Session
     XDG_SESSION_TYPE = "wayland";
@@ -55,5 +40,4 @@
     # ⛔ Optional override, if you don't want QT5 theme fallback
     DISABLE_QT5_COMPAT = "0";
   };
-
 }
