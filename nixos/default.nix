@@ -4,6 +4,8 @@
     imports = [
         ./configuration.nix
         ./hardware-configuration.nix
-        ./modules/core/users.nix
+        ../modules/core/networking.nix
+        ../modules/core/system.nix
+        ../modules/core/users.nix
     ];
 }
