@@ -7,11 +7,11 @@
       splash = false;
       splash_offset = 2.0;
       preload = [
-        "/data/Pictures/guitar.jpg"
+        "/data/Pictures/grum.jpg"
       ];
       wallpaper = [
-        "eDP-1,/data/Pictures/guitar.jpg"
-        ",/data/Pictures/guitar.jpg"
+        # "eDP-1,/data/Pictures/guitar.jpg"
+        ",/data/Pictures/grum.jpg"
       ];
     };
   };
