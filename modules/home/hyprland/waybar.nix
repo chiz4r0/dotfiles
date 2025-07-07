@@ -10,7 +10,7 @@
 
       modules-left = [ "hyprland/workspaces" "group/usage" ];
       modules-center = [ "clock" ];
-      modules-right = [ "wireplumber" "group/bat" "group/net" "tray" "custom/power" ];
+      modules-right = [ "pulseaudio" "group/bat" "group/net" "tray" "custom/power" ];
 
       "group/usage" = {
         orientation = "horizontal";
@@ -24,7 +24,7 @@
 
       "group/net" = {
         orientation = "horizontal";
-        modules = [ "hyprland/language" "network" "bluetooth" ];
+        modules = [ "network" ];
       };
 
       "hyprland/workspaces" = {
@@ -61,6 +61,25 @@
         onclick = "pavucontrol";
       };
 
+      pulseaudio = {
+        format = "{volume}% {icon} {format_source}";
+        format-bluetooth = "{volume}% {icon} {format_source}";
+        format-bluetooth-muted = " {icon} {format_source}";
+        format-muted = " {format_source}";
+        format-source = "{volume}% ";
+        format-source-muted = "";
+        format-icons = {
+          headphone = "";
+          hands-free = "";
+          headset = "";
+          phone = "";
+          portable = "";
+          car = "";
+          default = [ "" "" "" ];
+        };
+        on-click = "pavucontrol";
+      };
+
       "custom/power" = {
         format = "⏻";
         tooltip = false;
@@ -88,14 +107,12 @@
       };
 
       network = {
-        format = "";
-        format-ethernet = "󰉝 ";
-        format-wifi = "{icon} ";
-        format-disconnected = "󰲜 ";
-        format-icons = [ "󰛯" "󰛟" "󰛢" "󰛥" "󰛨" ];
-        tooltip-format-wifi = "{essid} ({signalStrength}%)";
-        tooltip-format-ethernet = "{ifname}";
-        tooltip-format-disconnected = "Disconnected";
+        format-wifi = "{essid} ({signalStrength}%) ";
+        format-ethernet = "{ipaddr}/{cidr} ";
+        tooltip-format = "{ifname} via {gwaddr} ";
+        format-linked = "{ifname} (No IP) ";
+        format-disconnected = "Disconnected ⚠";
+        format-alt = "{ifname}: {ipaddr}/{cidr}";
       };
 
       bluetooth = {
@@ -151,6 +168,7 @@
       }
 
       #wireplumber,
+      #pulseaudio,
       #bat,
       #tray,
       #usage,

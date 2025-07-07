@@ -98,6 +98,7 @@
       };
       bind = [
         "$mainMod, F, fullscreen, 1"
+        "$mainMod, E, exec, nautilus"
         "$mainMod SHIFT, F, fullscreen, 0"
         "$mainMod, RETURN, exec, alacritty"
         "$mainMod, Q, killactive"
