@@ -10,6 +10,7 @@
   ];
 
   home.packages = with pkgs; [
+    android-studio
     nautilus
     vscode
   ];
