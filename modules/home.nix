@@ -6,7 +6,7 @@
     ./home/direnv
     ./home/git
     ./home/hyprland
-    #./home/nvim
+    ./home/nvim
     ./home/zsh
   ];
 

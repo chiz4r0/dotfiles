@@ -5,6 +5,7 @@
     noto-fonts
     league-gothic
     adwaita-fonts
+    jetbrains-mono
     noto-fonts-cjk-sans
     noto-fonts-emoji
     corefonts

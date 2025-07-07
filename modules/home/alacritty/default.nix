@@ -25,15 +25,15 @@ in
       window.title = "Welcome Lah";
       scrolling.history = 10000;
       font.normal = {
-        family = "Adwaita Mono";
+        family = "JetBrains Mono";
         style = "Regular";
       };
       font.bold = {
-        family = "Adwaita Mono";
+        family = "JetBrains Mono";
         style = "Bold";
       };
       font.italic = {
-        family = "Adwaita Mono";
+        family = "Jetbrains Mono";
         style = "Italic";
       };
       font.size = 12;
