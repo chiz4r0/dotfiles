@@ -6,12 +6,14 @@
       # ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
     ];
+    nixpkgs.config.allowUnfree = true;
 
   security.sudo.wheelNeedsPassword = false;
 
   users.users.tabun = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "video" "disk" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" "audio" "video" "disk" ];
     packages = with pkgs; [
       tree
     ];
@@ -19,13 +21,16 @@
 
   ### Home Manager
   home-manager = {
+    
     useUserPackages = true;
     useGlobalPkgs = true;
     users.tabun = {
+      
+
       home.packages = with pkgs; [
         vscode
       ];
-
+    
     programs.git = {
       enable = true;
   	  userEmail = "yurandarezky@gmail.com";
@@ -80,7 +85,7 @@
     home.homeDirectory = "/home/tabun";
     home.stateVersion = "24.05";
     programs.home-manager.enable = true;
-    
+
     };
   };
 }
