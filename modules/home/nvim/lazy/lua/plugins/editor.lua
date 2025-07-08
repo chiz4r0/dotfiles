@@ -53,6 +53,7 @@ return {
 		dependencies = {
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
+        enabled = false,
 				build = "make",
 			},
 			"nvim-telescope/telescope-file-browser.nvim",
