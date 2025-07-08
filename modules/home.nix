@@ -6,6 +6,7 @@
     ./home/direnv
     ./home/git
     ./home/hyprland
+    ./home/kitty
     ./home/nvim
     ./home/tmux
     ./home/zsh
