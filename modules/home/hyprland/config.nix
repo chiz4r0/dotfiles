@@ -213,6 +213,7 @@
         "float, title:^(Heroic Games Launcher)$"
         "float, title:^(Open Folder)$"
         "float, title:^(Login - Akun Google — Mozilla Firefox)$"
+        "float, title:^(Sign in - Google Accounts — Mozilla Firefox)$"
         "float, title:^(Remmina Remote Desktop Client)$"
         "float, title:^(Welcome to Android Studio)$"
         "float, title:^(Virtual Machine Manager)$"

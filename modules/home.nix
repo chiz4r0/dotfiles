@@ -13,8 +13,12 @@
 
   home.packages = with pkgs; [
     android-studio
+    libreoffice-fresh
+    mpv
+    obsidian
     nautilus
     vscode
+    zotero
   ];
 
 }
