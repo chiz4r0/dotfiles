@@ -6,14 +6,14 @@
       # ./hardware-configuration.nix
       inputs.home-manager.nixosModules.home-manager
     ];
-    nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
   security.sudo.wheelNeedsPassword = false;
 
   users.users.tabun = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "audio" "video" "disk" ];
+    extraGroups = [ "network" "wheel" "audio" "video" "disk" ];
     packages = with pkgs; [
       tree
     ];
@@ -25,7 +25,10 @@
     useUserPackages = true;
     useGlobalPkgs = true;
     users.tabun = {  
-      imports = [../home.nix];
+      imports = [
+        ../home.nix
+	inputs.nixvim.homeManagerModules.nixvim
+      ];
       home.username = "tabun";
       home.homeDirectory = "/home/tabun";
       home.stateVersion = "24.05";

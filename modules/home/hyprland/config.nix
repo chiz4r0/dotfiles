@@ -102,7 +102,7 @@
         "$mainMod SHIFT, F, fullscreen, 0"
         "$mainMod, RETURN, exec, kitty"
         "$mainMod, Q, killactive"
-        "$mainMod, M, exit"
+        "$mainMod, M, exec, wlogout"
         #"$mainMod, R, exec, rofi -show drun -show-icons -theme ~/.local/share/rofi/themes/rounded-blue-dark.rasi"
         "$mainMod, R, exec, rofi -show drun -show-icons"
         "$mainMod, V, togglefloating"
