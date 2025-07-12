@@ -12,7 +12,7 @@
       background_opacity = "0.8";
       shell = "/bin/sh -c 'tmux new-session -A -s main'";
       background_blur = 1;
-      font_size = 12.0;
+      font_size = 11.0;
       font = "JetBrains Mono";
       symbol_map = let
         mappings = [
