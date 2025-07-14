@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs,  ... }:
 
 {
   networking.hostName = "cat-linux"; 
@@ -6,6 +6,7 @@
   networking.wireguard.enable = true;
   services.resolved.enable = true;
   environment.systemPackages = [
+    pkgs.samba
     pkgs.wireguard-tools
   ];
 }

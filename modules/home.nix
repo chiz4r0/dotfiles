@@ -14,10 +14,14 @@
 
   home.packages = with pkgs; [
     android-studio
+    pop-gtk-theme
+    gvfs
+    jetbrains.webstorm
     libreoffice-fresh
     mpv
     obsidian
     nautilus
+    remmina
     vscode
     zotero
   ];
