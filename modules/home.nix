@@ -20,7 +20,6 @@
     libreoffice-fresh
     mpv
     obsidian
-    nautilus
     remmina
     vscode
     yazi

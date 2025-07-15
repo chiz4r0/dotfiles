@@ -98,7 +98,7 @@
       };
       bind = [
         "$mainMod, F, fullscreen, 1"
-        "$mainMod, E, exec, yazi"
+        "$mainMod, E, exec, kitty -e yazi"
         "$mainMod SHIFT, F, fullscreen, 0"
         "$mainMod, RETURN, exec, kitty"
         "$mainMod, Q, killactive"
