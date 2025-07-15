@@ -11,5 +11,8 @@
     lutris 
     bottles 
     heroic
+    wineWowPackages.stable
+    winetricks
+    wineWowPackages.waylandFull
   ];
 }

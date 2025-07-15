@@ -3,7 +3,7 @@
 {
     imports = [
         ./hardware-configuration.nix
-        ../modules/core/flatpak.nix 
+        #../modules/core/flatpak.nix 
         ../modules/core/font.nix      
         ../modules/core/games.nix      
         ../modules/core/hardware.nix

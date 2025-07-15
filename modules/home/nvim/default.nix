@@ -194,96 +194,34 @@
       wrap = false;
     };
     plugins.web-devicons.enable = true;
+
     plugins.lsp = {
       enable = true;
+
       servers = {
-        cssls.enable = true;
-        html.enable = true;
-        yamlls = {
-          enable = true;
-          settings.yaml.keyOrdering = false;
+        # Untuk TypeScript, JavaScript, dan TSX
+        tsserver.enable = true;
+
+        # Untuk linting JavaScript/TypeScript (optional, tapi disarankan)
+        eslint.enable = true;
+
+        # Untuk Golang
+        gopls.enable = true;
+      };
+
+      keymaps = {
+        lspBuf = {
+          "gd" = "definition";
+          "gD" = "references";
+          "gt" = "type_definition";
+          "gi" = "implementation";
+          "K" = "hover";
+          "<leader>a" = "code_action";
+          "<leader>rn" = "rename";
         };
-        ts_ls = {
-          enable = true;
-          extraOptions = {
-            single_file_support = false;
-            settings = {
-              typescript.inlayHints = {
-                includeInlayParameterNameHints = "literal";
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false;
-                includeInlayFunctionParameterTypeHints = true;
-                includeInlayVariableTypeHints = false;
-                includeInlayPropertyDeclarationTypeHints = true;
-                includeInlayFunctionLikeReturnTypeHints = true;
-                includeInlayEnumMemberValueHints = true;
-              };
-              javascript.inlayHints = {
-                includeInlayParameterNameHints = "all";
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false;
-                includeInlayFunctionParameterTypeHints = true;
-                includeInlayVariableTypeHints = true;
-                includeInlayPropertyDeclarationTypeHints = true;
-                includeInlayFunctionLikeReturnTypeHints = true;
-                includeInlayEnumMemberValueHints = true;
-              };
-            };
-          };
-        };
-        tailwindcss = {
-          enable = true;
-        };
-        lua_ls = {
-          enable = true;
-          extraOptions = {
-            single_file_support = true;
-            settings.Lua = {
-              workspace.checkThirdParty = false;
-              completion = {
-                workspaceWord = true;
-                callSnippet = "Both";
-              };
-              hint = {
-                enable = true;
-                setType = false;
-                paramType = true;
-                paramName = "Disable";
-                semicolon = "Disable";
-                arrayIndex = "Disable";
-              };
-              doc.privateName = [ "^_" ];
-              type.castNumberToInteger = true;
-              diagnostics = {
-                disable = [ "incomplete-signature-doc" "trailing-space" ];
-                groupSeverity = {
-                  strong = "Warning";
-                  strict = "Warning";
-                };
-                groupFileStatus = {
-                  ambiguity = "Opened";
-                  await = "Opened";
-                  codestyle = "None";
-                  duplicate = "Opened";
-                  global = "Opened";
-                  luadoc = "Opened";
-                  redefined = "Opened";
-                  strict = "Opened";
-                  strong = "Opened";
-                  type-check = "Opened";
-                  unbalanced = "Opened";
-                  unused = "Opened";
-                };
-                unusedLocalExclude = [ "_*" ];
-              };
-              format = {
-                enable = false;
-                defaultConfig = {
-                  indent_style = "space";
-                  indent_size = "2";
-                  continuation_indent_size = "2";
-                };
-              };
-            };
-          };
+        diagnostic = {
+          "<leader>j" = "goto_next";
+          "<leader>k" = "goto_prev";
         };
       };
     };

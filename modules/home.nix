@@ -16,7 +16,6 @@
     android-studio
     pop-gtk-theme
     gvfs
-    jetbrains.webstorm
     libreoffice-fresh
     mpv
     obsidian
