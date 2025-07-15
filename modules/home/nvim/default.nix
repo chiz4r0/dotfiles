@@ -2,10 +2,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [
-    ./plugins/colorschema.nix
-  ];
-
   programs.nixvim = {
     enable = true;
     viAlias = true;
@@ -16,47 +12,171 @@
   	  mapleader = " ";
     };
 
+    colorschemes.catppuccin = {
+      enable = true;
+      settings.transparent_background = true;
+    };
+
     # KeyMap
 
     keymaps = [
+      {
+        mode = "n";
+        key = "<leader>xx";
+        action = "<cmd>TroubleToggle<CR>";
+        options.desc = "Toggle Trouble diagnostics";
+      }
+        
       {
         action = "<cmd>Neotree toggle<CR>";
         key = "<leader>e";
       }
 
       # Telescope
-      
-      {
-        action = "<cmd>Telescope live_grep<CR>";
-        key = "<leader>fw";
-      }
-      {
-        action = "<cmd>Telescope find_files<CR>";
-        key = "<leader>ff";
-      }
-      {
-        action = "<cmd>Telescope git_commits<CR>";
-        key = "<leader>fg";
-      }
-      {
-        action = "<cmd>Telescope oldfiles<CR>";
-        key = "<leader>fh";
-      }
-      {
-        action = "<cmd>Telescope colorscheme<CR>";
-        key = "<leader>ch";
-      }
-      {
-        action = "<cmd>Telescope man_pages<CR>";
-        key = "<leader>fm";
+
+     {
+        mode = "n";  # Normal mode
+        key = "sf";
+        action = ''
+          function()
+            local telescope = require("telescope")
+
+            local function telescope_buffer_dir()
+              return vim.fn.expand("%:p:h")
+            end
+
+            telescope.extensions.file_browser.file_browser({
+              path = "%:p:h",
+              cwd = telescope_buffer_dir(),
+              respect_gitignore = false,
+              hidden = true,
+              grouped = true,
+              previewer = false,
+              initial_mode = "normal",
+              layout_config = { height = 40 },
+            })
+          end
+        '';
+        lua = true;
+        options.desc = "Open File Browser with the path of the current buffer";
       }
 
+      {
+        mode = "n";
+        key = ";f";
+        action = ''
+          function()
+            local builtin = require("telescope.builtin")
+            builtin.find_files({
+              no_ignore = false,
+              hidden = true,
+            })
+          end
+        '';
+        lua = true;
+        options.desc = "Lists files in your current working directory, respects .gitignore";
+      }
+
+      {
+        mode = "n";
+        key = ";r";
+        action = ''
+          function()
+            local builtin = require("telescope.builtin")
+            builtin.live_grep({
+              additional_args = { "--hidden" },
+            })
+          end
+        '';
+        lua = true;
+        options.desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore";
+      }
+
+      {
+        mode = "n";
+        key = "\\\\";
+        action = ''
+          function()
+            local builtin = require("telescope.builtin")
+            builtin.buffers()
+          end
+        '';
+        lua = true;
+        options.desc = "Lists open buffers";
+      }
+
+      {
+        mode = "n";
+        key = ";t";
+        action = ''
+          function()
+            local builtin = require("telescope.builtin")
+            builtin.help_tags()
+          end
+        '';
+        lua = true;
+        options.desc = "Lists available help tags and opens a new window with the relevant help info on <cr>";
+      }
+
+      {
+        mode = "n";
+        key = ";;";
+        action = ''
+          function()
+            local builtin = require("telescope.builtin")
+            builtin.resume()
+          end
+        '';
+        lua = true;
+        options.desc = "Resume the previous telescope picker";
+      }
+
+      {
+        mode = "n";
+        key = ";e";
+        action = ''
+          function()
+            local builtin = require("telescope.builtin")
+            builtin.diagnostics()
+          end
+        '';
+        lua = true;
+        options.desc = "Lists Diagnostics for all open buffers or a specific buffer";
+      }
+
+      {
+        mode = "n";
+        key = ";s";
+        action = ''
+          function()
+            local builtin = require("telescope.builtin")
+            builtin.treesitter()
+          end
+        '';
+        lua = true;
+        options.desc = "Lists Function names, variables, from Treesitter";
+      }
+
+      {
+        mode = "n";
+        key = ";c";
+        action = ''
+          function()
+            local builtin = require("telescope.builtin")
+            builtin.lsp_incoming_calls()
+          end
+        '';
+        lua = true;
+        options.desc = "Lists LSP incoming calls for word under the cursor";
+      }
+      
     ];
 
     opts = {
       encoding = "utf-8";
       fileencoding = "utf-8";
       number = true;
+      relativenumber = true;
       title = true;
       autoindent = true;
       smartindent = true;
@@ -73,8 +193,111 @@
       tabstop = 2;
       wrap = false;
     };
+    plugins.web-devicons.enable = true;
+    plugins.lsp = {
+      enable = true;
+      servers = {
+        cssls.enable = true;
+        html.enable = true;
+        yamlls = {
+          enable = true;
+          settings.yaml.keyOrdering = false;
+        };
+        ts_ls = {
+          enable = true;
+          extraOptions = {
+            single_file_support = false;
+            settings = {
+              typescript.inlayHints = {
+                includeInlayParameterNameHints = "literal";
+                includeInlayParameterNameHintsWhenArgumentMatchesName = false;
+                includeInlayFunctionParameterTypeHints = true;
+                includeInlayVariableTypeHints = false;
+                includeInlayPropertyDeclarationTypeHints = true;
+                includeInlayFunctionLikeReturnTypeHints = true;
+                includeInlayEnumMemberValueHints = true;
+              };
+              javascript.inlayHints = {
+                includeInlayParameterNameHints = "all";
+                includeInlayParameterNameHintsWhenArgumentMatchesName = false;
+                includeInlayFunctionParameterTypeHints = true;
+                includeInlayVariableTypeHints = true;
+                includeInlayPropertyDeclarationTypeHints = true;
+                includeInlayFunctionLikeReturnTypeHints = true;
+                includeInlayEnumMemberValueHints = true;
+              };
+            };
+          };
+        };
+        tailwindcss = {
+          enable = true;
+        };
+        lua_ls = {
+          enable = true;
+          extraOptions = {
+            single_file_support = true;
+            settings.Lua = {
+              workspace.checkThirdParty = false;
+              completion = {
+                workspaceWord = true;
+                callSnippet = "Both";
+              };
+              hint = {
+                enable = true;
+                setType = false;
+                paramType = true;
+                paramName = "Disable";
+                semicolon = "Disable";
+                arrayIndex = "Disable";
+              };
+              doc.privateName = [ "^_" ];
+              type.castNumberToInteger = true;
+              diagnostics = {
+                disable = [ "incomplete-signature-doc" "trailing-space" ];
+                groupSeverity = {
+                  strong = "Warning";
+                  strict = "Warning";
+                };
+                groupFileStatus = {
+                  ambiguity = "Opened";
+                  await = "Opened";
+                  codestyle = "None";
+                  duplicate = "Opened";
+                  global = "Opened";
+                  luadoc = "Opened";
+                  redefined = "Opened";
+                  strict = "Opened";
+                  strong = "Opened";
+                  type-check = "Opened";
+                  unbalanced = "Opened";
+                  unused = "Opened";
+                };
+                unusedLocalExclude = [ "_*" ];
+              };
+              format = {
+                enable = false;
+                defaultConfig = {
+                  indent_style = "space";
+                  indent_size = "2";
+                  continuation_indent_size = "2";
+                };
+              };
+            };
+          };
+        };
+      };
+    };
+
+    plugins.treesitter = {
+      enable = true;
+
+    };
+
 
     plugins.lualine.enable = true;
+    plugins.nvim-autopairs.enable = true;
+    plugins.trouble.enable = true;
+    plugins.luasnip.enable = true;
     plugins.neo-tree = {
       enable = true;
       enableDiagnostics = true;
@@ -106,6 +329,9 @@
         fzf-native = {
           enable = true;
         };
+        file-browser = {
+          enable = true;
+        };
       };
       settings = {
         defaults = {
@@ -130,6 +356,7 @@
         };
       };
     };
+
     extraPackages = with pkgs; [ ripgrep ];
 
   };
