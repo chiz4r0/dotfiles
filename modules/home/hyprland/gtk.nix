@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = (with pkgs; [ 
+    gnome-themes-extra
     bibata-cursors
     flat-remix-gtk
     adwaita-icon-theme
@@ -16,10 +17,7 @@
 
   gtk = {
     enable = true;
-    # theme = {
-    #   package = pkgs.flat-remix-gtk;
-    #   name = "Flat-Remix-GTK-Grey-Darkest";
-    # };
+    theme.name = "Adwaita-dark";
 
     iconTheme = {
       package = pkgs.adwaita-icon-theme;

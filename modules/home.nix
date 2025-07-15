@@ -23,6 +23,7 @@
     nautilus
     remmina
     vscode
+    yazi
     zotero
   ];
 
