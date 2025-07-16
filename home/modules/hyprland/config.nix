@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [
@@ -22,7 +21,6 @@
       #   HYPRCURSOR_SIZE = "24";
       # };
 
-      
       general = {
         "$mainMod" = "SUPER";
         layout = "dwindle";
@@ -75,7 +73,7 @@
           "easeInOutCubic,0.65,0.05,0.36,1"
           "linear,0,0,1,1"
           "almostLinear,0.5,0.5,0.75,1.0"
-          "quick,0.15,0,0.1,1"      
+          "quick,0.15,0,0.1,1"
         ];
         animation = [
           "global, 1, 10, default"
@@ -224,7 +222,6 @@
         "f[0],rounding:false,bordersize:0,gapsout:0"
         "f[1],rounding:false,bordersize:0,gapsout:0"
       ];
-
     };
     extraConfig = "
 
