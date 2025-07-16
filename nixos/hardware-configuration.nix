@@ -19,6 +19,18 @@
       options = [ "subvol=@" "compress=zstd" "noatime" ];
     };
 
+  fileSystems."/var" =
+    { device = "/dev/disk/by-uuid/77f04304-6b51-4de3-a465-62b14ee46614";
+      fsType = "btrfs";
+      options = [ "subvol=@var" "compress=zstd" "noatime" ];
+    };
+
+  fileSystems."/var/log" =
+    { device = "/dev/disk/by-uuid/77f04304-6b51-4de3-a465-62b14ee46614";
+      fsType = "btrfs";
+      options = [ "subvol=@log" "compress=zstd" "noatime" ];
+    };
+
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/77f04304-6b51-4de3-a465-62b14ee46614";
       fsType = "btrfs";
@@ -31,12 +43,6 @@
       options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
 
-  fileSystems."/var/log" =
-    { device = "/dev/disk/by-uuid/77f04304-6b51-4de3-a465-62b14ee46614";
-      fsType = "btrfs";
-      options = [ "subvol=@log" "compress=zstd" "noatime" ];
-    };
-
   fileSystems."/data" =
     { device = "/dev/disk/by-uuid/77f04304-6b51-4de3-a465-62b14ee46614";
       fsType = "btrfs";
@@ -44,7 +50,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2657-A302";
+    { device = "/dev/disk/by-uuid/1CD1-6B47";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
