@@ -27,7 +27,7 @@
     users.tabun = {  
       imports = [
         ../home.nix
-        inputs.nvf.nixosModules.default
+        inputs.nvf.homeManagerModules.default
       ];
       home.username = "tabun";
       home.homeDirectory = "/home/tabun";
