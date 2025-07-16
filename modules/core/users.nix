@@ -27,7 +27,7 @@
     users.tabun = {  
       imports = [
         ../home.nix
-	inputs.nixvim.homeManagerModules.nixvim
+        inputs.nvf.nixosModules.default
       ];
       home.username = "tabun";
       home.homeDirectory = "/home/tabun";

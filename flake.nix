@@ -7,7 +7,7 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.obsidian-nvim.follows = "obsidian-nvim";
-    }
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
