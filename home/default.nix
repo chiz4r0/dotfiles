@@ -2,14 +2,14 @@
 
 {
   imports = [
-    ./home/alacritty
-    ./home/direnv
-    ./home/git
-    ./home/hyprland
-    ./home/kitty
-    ./home/nvim
-    ./home/tmux
-    ./home/zsh
+    ./modules/alacritty
+    ./modules/direnv
+    ./modules/git
+    ./modules/hyprland
+    ./modules/kitty
+    ./modules/nvim
+    ./modules/tmux
+    ./modules/zsh
   ];
 
   home.packages = with pkgs; [

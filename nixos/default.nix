@@ -2,18 +2,17 @@
 
 {
     imports = [
-        ./hardware-configuration.nix
-        #../modules/core/flatpak.nix 
-        ../modules/core/font.nix      
-        ../modules/core/games.nix      
-        ../modules/core/hardware.nix
-        ../modules/core/hyprland.nix
-        ../modules/core/package.nix
-        ../modules/core/pipewire.nix
-        ../modules/core/print.nix
-        ../modules/core/networking.nix
-        ../modules/core/system.nix
-        ../modules/core/tlp.nix
-        ../modules/core/users.nix
+        ./hardware.nix
+        ./modules/font.nix      
+        ./modules/games.nix      
+        ./modules/hardware.nix
+        ./modules/hyprland.nix
+        ./modules/package.nix
+        ./modules/pipewire.nix
+        ./modules/print.nix
+        ./modules/networking.nix
+        ./modules/system.nix
+        ./modules/tlp.nix
+        ./modules/users.nix
     ];
 }
