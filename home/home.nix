@@ -7,7 +7,7 @@
     ./modules/git
     ./modules/hyprland
     ./modules/kitty
-    ./modules/nvim
+    ./modules/neovim
     ./modules/tmux
     ./modules/zsh
   ];
