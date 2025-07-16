@@ -26,7 +26,7 @@
     useGlobalPkgs = true;
     users.tabun = {  
       imports = [
-        ../../home
+        ../../home/home.nix
         inputs.nvf.homeManagerModules.default
       ];
       home.username = "tabun";
