@@ -32,6 +32,7 @@
         utility.motion.flash-nvim.enable = true;
         visuals.indent-blankline.enable = true;
         visuals.rainbow-delimiters.enable = true;
+        visuals.nvim-web-devicons.enable = true;
         comments.comment-nvim.enable = true;
         git.enable = true;
         mini.bracketed = {
@@ -91,7 +92,6 @@
 
         ui.noice.enable = true;
         ui.borders.plugins.which-key.style = "solid";
-        visuals.nvim-web-devicons.enable = true;
       };
     };
   };
