@@ -7,6 +7,7 @@
     ./configs/options.nix
     ./configs/keymaps.nix
     ./plugins/telescope.nix
+    ./plugins/theme.nix
   ];
 
   programs.nvf = {
@@ -67,18 +68,6 @@
           formatOnSave = true;
         };
 
-        theme = {
-          enable = true;
-          name = "catppuccin";
-          style = "mocha";
-          transparent = true;
-        };
-
-        statusline.lualine = {
-          enable = true;
-          globalStatus = true;
-          icons.enable = true;
-        };
         autocomplete.nvim-cmp.enable = true;
         autopairs.nvim-autopairs.enable = true;
 
