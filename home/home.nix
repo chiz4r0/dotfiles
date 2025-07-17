@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./modules/alacritty
     ./modules/direnv
@@ -15,6 +17,8 @@
   home.packages = with pkgs; [
     android-studio
     pop-gtk-theme
+    gpu-screen-recorder # CLI
+    gpu-screen-recorder-gtk # GUI
     gvfs
     libreoffice-fresh
     mpv
@@ -24,5 +28,4 @@
     yazi
     zotero
   ];
-
 }

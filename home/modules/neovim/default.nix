@@ -7,7 +7,7 @@
     ./configs/options.nix
     ./configs/keymaps.nix
     ./plugins/telescope.nix
-    ./plugins/theme.nix
+    ./plugins/themes.nix
     ./plugins/whitch-key.nix
   ];
 
