@@ -1,5 +1,4 @@
-{...}:
-{
+{...}: {
   programs.nvf.settings.vim = {
     luaConfigRC.options = ''
       vim.cmd [[
@@ -13,5 +12,5 @@
         highlight TelescopePreviewBorder guibg=NONE
       ]]
     '';
-  }
+  };
 }
