@@ -8,7 +8,6 @@
     ./configs/keymaps.nix
     ./plugins/telescope.nix
     ./plugins/themes.nix
-    ./plugins/whitch-key.nix
   ];
 
   programs.nvf = {
