@@ -9,14 +9,22 @@
       vim = {
         viAlias = false;
         vimAlias = true;
+        extraPackages = with pkgs; [fd ripgrep];
 
         options = {
+          title = true;
+          autoindent = true;
+          smartindent = true;
+          ignorecase = true;
+          scrolloff = 10;
           shiftwidth = 2;
           tabstop = 2;
           expandtab = true;
         };
 
         utility.motion.flash-nvim.enable = true;
+        visuals.indent-blankline.enable = true;
+        comments.comment-nvim.enable = true;
         git.enable = true;
         mini.bracketed = {
           enable = true;
@@ -52,10 +60,11 @@
           enable = true;
           formatOnSave = true;
         };
+
         theme = {
           enable = true;
-          name = "tokyonight";
-          style = "storm";
+          name = "catppuccin";
+          style = "mocha";
           transparent = true;
         };
 
@@ -90,6 +99,7 @@
 
         telescope = {
           enable = true;
+
           extensions = [
             {
               name = "fzf";
@@ -117,16 +127,61 @@
             }
           ];
         };
-
-        keymaps = [
-          {
-            mode = ["n"];
-            key = "sf";
-            action = ":Telescope file_browser<CR>";
-            silent = true;
-            desc = "Open file telescope file browser";
+        luaConfigRC.telescope = ''
+          require('telescope').setup{
+            defaults = {
+              wrap_results = true,
+              layout_strategy = 'horizontal',
+              layout_config = {
+                prompt_position = 'top',
+                preview_width = 0.55,
+                width = 0.9,
+                height = 0.85,
+              },
+              sorting_strategy = "ascending",
+              winblend = 15,
+              file_ignore_patterns = { "node_modules", ".git/" }
+            }
           }
-        ];
+        '';
+
+        luaConfigRC.options = ''
+          vim.cmd [[
+            highlight TelescopeNormal guibg=NONE
+            highlight TelescopeBorder guibg=NONE
+            highlight TelescopePromptNormal guibg=NONE
+            highlight TelescopePromptBorder guibg=NONE
+            highlight TelescopeResultsNormal guibg=NONE
+            highlight TelescopeResultsBorder guibg=NONE
+            highlight TelescopePreviewNormal guibg=NONE
+            highlight TelescopePreviewBorder guibg=NONE
+          ]]
+        '';
+
+        luaConfigRC.keymaps = ''
+          local tb = require('telescope.builtin')
+          local fb = require('telescope').extensions.file_browser
+
+          vim.keymap.set('n', ';f', tb.find_files, { noremap = true, silent = true })         -- cari file
+          vim.keymap.set('n', ';r', tb.live_grep, { noremap = true, silent = true })          -- ripgrep
+          vim.keymap.set('n', '\\\\', tb.buffers, { noremap = true, silent = true })          -- list buffer
+          vim.keymap.set('n', ';t', tb.tags, { noremap = true, silent = true })               -- list tags
+          vim.keymap.set('n', ';;', tb.resume, { noremap = true, silent = true })             -- resume picker
+          vim.keymap.set('n', ';e', tb.diagnostics, { noremap = true, silent = true })        -- list diagnostics
+          vim.keymap.set('n', ';s', tb.lsp_document_symbols, { noremap = true, silent = true }) -- list functions/symbols
+          vim.keymap.set('n', ';c', tb.lsp_workspace_symbols, { noremap = true, silent = true }) -- list lsp workspace symbols
+          vim.keymap.set('n', 'sf', function()
+            fb.file_browser({
+              path = "%:p:h",
+              cwd = vim.fn.expand("%:p:h"),
+              hidden = true,
+              grouped = true,
+              previewer = false,
+              initial_mode = "normal",
+              layout_config = { height = 40 },
+            })
+          end, { noremap = true, silent = true })
+        '';
       };
     };
   };
