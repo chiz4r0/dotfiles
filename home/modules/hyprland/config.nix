@@ -218,6 +218,11 @@
         "noinitialfocus,class:^jetbrains-.*$,floating:1,title:^$|^\\s$|^win\\d+$"
       ];
 
+      windowrulev2 = [
+        "float, class:^(burp-.*)$, title:^(About Burp Suite.*)$"
+        "tile, class:^(burp-.*)$"
+      ];
+
       workspace = [
         "f[0],rounding:false,bordersize:0,gapsout:0"
         "f[1],rounding:false,bordersize:0,gapsout:0"

@@ -1,18 +1,24 @@
-{ config, lib, pkgs, inputs, de, ... }:
-
 {
-    imports = [
-        ./hardware.nix
-        ./modules/font.nix      
-        ./modules/games.nix      
-        ./modules/hardware.nix
-        ./modules/hyprland.nix
-        ./modules/package.nix
-        ./modules/pipewire.nix
-        ./modules/print.nix
-        ./modules/networking.nix
-        ./modules/system.nix
-        ./modules/tlp.nix
-        ./modules/users.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  inputs,
+  de,
+  ...
+}: {
+  imports = [
+    ./hardware.nix
+    ./modules/font.nix
+    ./modules/games.nix
+    ./modules/hardware.nix
+    ./modules/hyprland.nix
+    ./modules/package.nix
+    ./modules/pipewire.nix
+    ./modules/print.nix
+    ./modules/networking.nix
+    ./modules/system.nix
+    ./modules/tlp.nix
+    ./modules/users.nix
+    ./modules/virtualisation.nix
+  ];
 }
