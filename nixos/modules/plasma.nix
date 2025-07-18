@@ -1,6 +1,5 @@
-{pkgs, ...}:
-{
-  service = {
+{pkgs, ...}: {
+  services = {
     desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
     displayManager.sddm.wayland.enable = true;
@@ -20,5 +19,5 @@
     haruna # Open source video player built with Qt/QML and libmpv
     wayland-utils # Wayland utilities
     wl-clipboard # Command-line copy/paste utilities for Wayland
-  ]
+  ];
 }
