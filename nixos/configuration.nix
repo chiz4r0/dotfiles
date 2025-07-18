@@ -11,10 +11,11 @@
     ./modules/font.nix
     ./modules/games.nix
     ./modules/hardware.nix
+    ./modules/gnome.nix
     ./modules/hyprland.nix
     ./modules/package.nix
     ./modules/pipewire.nix
-    ./modules/plasma.nix
+    #./modules/plasma.nix
     ./modules/print.nix
     ./modules/networking.nix
     ./modules/system.nix
