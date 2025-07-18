@@ -14,6 +14,7 @@
     ./modules/hyprland.nix
     ./modules/package.nix
     ./modules/pipewire.nix
+    ./modules/plasma.nix
     ./modules/print.nix
     ./modules/networking.nix
     ./modules/system.nix
