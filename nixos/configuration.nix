@@ -11,7 +11,7 @@
     ./modules/font.nix
     ./modules/games.nix
     ./modules/hardware.nix
-    ./modules/gnome.nix
+    #./modules/gnome.nix
     ./modules/hyprland.nix
     ./modules/package.nix
     ./modules/pipewire.nix
