@@ -1,19 +1,23 @@
-{ config, pkgs, ... }:
-
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   MyAliases = {
     ll = "ls -l";
     update = "sudo nixos-rebuild switch --flake /data/dotfiles";
     upgrade = "nix flake update --flake /data/dotfiles && sudo nixos-rebuild switch --flake /data/dotfiles";
   };
-in
-
-{
+in {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    sessionVariables = {
+      EDITOR = "vim";
+      VISUAL = "vim";
+    };
     shellAliases = MyAliases;
     history = {
       size = 10000;
@@ -21,7 +25,7 @@ in
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = ["git"];
       theme = "steeef";
     };
   };

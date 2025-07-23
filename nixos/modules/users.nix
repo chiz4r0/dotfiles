@@ -1,11 +1,16 @@
-{ config, lib, pkgs, inputs, de, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      # ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.home-manager
-    ];
+  config,
+  lib,
+  pkgs,
+  inputs,
+  de,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    # ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.home-manager
+  ];
   nixpkgs.config.allowUnfree = true;
 
   security.sudo.wheelNeedsPassword = false;
@@ -13,7 +18,7 @@
   users.users.tabun = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "network" "wheel" "audio" "video" "disk" ];
+    extraGroups = ["network" "wheel" "audio" "video" "docker" "disk"];
     packages = with pkgs; [
       tree
     ];
@@ -21,10 +26,9 @@
 
   ### Home Manager
   home-manager = {
-    
     useUserPackages = true;
     useGlobalPkgs = true;
-    users.tabun = {  
+    users.tabun = {
       imports = [
         ../../home/home.nix
         inputs.nvf.homeManagerModules.default

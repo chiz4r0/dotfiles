@@ -16,7 +16,7 @@
       vim = {
         viAlias = false;
         vimAlias = true;
-        extraPackages = with pkgs; [fd ripgrep];
+        extraPackages = with pkgs; [fd ripgrep nodePackages.prettier];
 
         options = {
           title = true;
@@ -68,6 +68,9 @@
         lsp = {
           enable = true;
           formatOnSave = true;
+          null-ls = {
+            enable = true;
+          };
         };
 
         autocomplete.nvim-cmp.enable = true;
@@ -90,7 +93,7 @@
           tailwind.enable = true;
         };
 
-        ui.noice.enable = true;
+        #ui.noice.enable = true;
         ui.borders.plugins.which-key.style = "solid";
       };
     };

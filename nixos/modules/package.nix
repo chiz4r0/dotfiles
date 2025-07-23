@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   nixpkgs.config.allowUnfree = true;
   programs.firefox.enable = true;
   programs.zsh.enable = true;
@@ -9,5 +12,10 @@
     git
     kitty
     wget
+
+    #
+    unzip
+    unrar
+    gzip
   ];
 }
