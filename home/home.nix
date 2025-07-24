@@ -20,6 +20,7 @@
     gpu-screen-recorder # CLI
     gpu-screen-recorder-gtk # GUI
     gvfs
+    jetbrains.webstorm
     libreoffice-fresh
     mpv
     obsidian
