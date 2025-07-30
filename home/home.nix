@@ -16,12 +16,11 @@
 
   home.packages = with pkgs; [
     android-studio
-    pop-gtk-theme
     gpu-screen-recorder # CLI
     gpu-screen-recorder-gtk # GUI
     gvfs
-    jetbrains.webstorm
     libreoffice-fresh
+    jetbrains.phpstorm
     mpv
     obsidian
     remmina

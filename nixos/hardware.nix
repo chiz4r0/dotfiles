@@ -14,43 +14,43 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/77f04304-6b51-4de3-a465-62b14ee46614";
+    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
       fsType = "btrfs";
-      options = [ "subvol=@" "noatime" "compress=zstd" ];
+      options = [ "subvol=@" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/77f04304-6b51-4de3-a465-62b14ee46614";
+    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
       fsType = "btrfs";
-      options = [ "subvol=@var" "noatime" "compress=zstd" ];
+      options = [ "subvol=@var" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/var/log" =
-    { device = "/dev/disk/by-uuid/77f04304-6b51-4de3-a465-62b14ee46614";
+    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
       fsType = "btrfs";
-      options = [ "subvol=@log" "noatime" "compress=zstd" ];
+      options = [ "subvol=@log"  "compress=zstd" "noatime" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/77f04304-6b51-4de3-a465-62b14ee46614";
+    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
       fsType = "btrfs";
-      options = [ "subvol=@home" "noatime" "compress=zstd" ];
-    };
-
-  fileSystems."/data" =
-    { device = "/dev/disk/by-uuid/77f04304-6b51-4de3-a465-62b14ee46614";
-      fsType = "btrfs";
-      options = [ "subvol=@data" "noatime" "compress=zstd" ];
+      options = [ "subvol=@home" "compress=zstd" "noatime"  ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/77f04304-6b51-4de3-a465-62b14ee46614";
+    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
       fsType = "btrfs";
-      options = [ "subvol=@nix" "noatime" "compress=zstd" ];
+      options = [ "subvol=@nix" "compress=zstd" "noatime"  ];
+    };
+
+  fileSystems."/data" =
+    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
+      fsType = "btrfs";
+      options = [ "subvol=@data" "compress=zstd" "noatime"  ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/A51A-76F0";
+    { device = "/dev/disk/by-uuid/8A2A-6E42";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
