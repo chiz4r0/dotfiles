@@ -14,21 +14,22 @@
     };
   };
 
-  outputs = 
-  { nixpkgs, self, ... } @inputs: 
-  let
+  outputs = {
+    nixpkgs,
+    self,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
     };
     lib = nixpkgs.lib;
-  in
-  {
+  in {
     nixosConfigurations = {
-      cat-linux = nixpkgs.lib.nixosSystem {
+      devzc0de = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ 
+        modules = [
           ./nixos/configuration.nix
         ];
         specialArgs = {

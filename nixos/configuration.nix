@@ -8,6 +8,7 @@
 }: {
   imports = [
     ./hardware.nix
+    ./modules/displaylink.nix
     ./modules/font.nix
     ./modules/games.nix
     ./modules/hardware.nix

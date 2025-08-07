@@ -14,43 +14,37 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
+    { device = "/dev/disk/by-uuid/b1859c00-2a93-4182-9935-b078aac4f96a";
       fsType = "btrfs";
       options = [ "subvol=@" "compress=zstd" "noatime" ];
     };
 
-  fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/b1859c00-2a93-4182-9935-b078aac4f96a";
       fsType = "btrfs";
-      options = [ "subvol=@var" "compress=zstd" "noatime" ];
+      options = [ "subvol=@home" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/var/log" =
-    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
+    { device = "/dev/disk/by-uuid/b1859c00-2a93-4182-9935-b078aac4f96a";
       fsType = "btrfs";
-      options = [ "subvol=@log"  "compress=zstd" "noatime" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
-      fsType = "btrfs";
-      options = [ "subvol=@home" "compress=zstd" "noatime"  ];
+      options = [ "subvol=@log" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
+    { device = "/dev/disk/by-uuid/b1859c00-2a93-4182-9935-b078aac4f96a";
       fsType = "btrfs";
-      options = [ "subvol=@nix" "compress=zstd" "noatime"  ];
+      options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/data" =
-    { device = "/dev/disk/by-uuid/e49147cb-949d-42a8-8fe9-0079c8068966";
+    { device = "/dev/disk/by-uuid/b1859c00-2a93-4182-9935-b078aac4f96a";
       fsType = "btrfs";
-      options = [ "subvol=@data" "compress=zstd" "noatime"  ];
+      options = [ "subvol=@data" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8A2A-6E42";
+    { device = "/dev/disk/by-uuid/C99D-75C7";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };

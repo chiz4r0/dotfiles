@@ -1,8 +1,11 @@
-{ config, lib, pkgs,  ... }:
-
 {
-  networking.hostName = "cat-linux"; 
-  networking.networkmanager.enable = true; 
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  networking.hostName = "devzc0de";
+  networking.networkmanager.enable = true;
   networking.wireguard.enable = true;
   services.resolved.enable = true;
   environment.systemPackages = [
