@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   boot = {
     extraModulePackages = [config.boot.kernelPackages.evdi];
     initrd = {

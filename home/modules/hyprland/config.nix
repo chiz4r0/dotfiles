@@ -4,6 +4,8 @@
       monitor = [
         ",preferred,auto,auto"
         "eDP-1, 1920x1200@60, 0x0, 1.25"
+        "DVI-I-1,1280x720@60,auto,1"
+        "DVI-I-2,1280x720@60,auto,1"
         #",preferred,auto,auto, mirror, eDP-1"
         #"eDP-1, 1920x1200@60, 0x0, 1.5"
       ];
