@@ -3,6 +3,7 @@
 {
   imports = [
     ./modules/dconf.nix
+    ./modules/git.nix
     ./modules/package.nix
   ];
 
