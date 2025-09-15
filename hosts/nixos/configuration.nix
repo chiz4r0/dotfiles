@@ -9,6 +9,7 @@
       ../../modules/hardware.nix
       ../../modules/pipewire.nix
       ../../modules/system.nix
+      ../../modules/tlp.nix
       ../../modules/users.nix
     ];
 
