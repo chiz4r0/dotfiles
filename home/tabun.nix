@@ -6,6 +6,7 @@
     ./modules/dconf.nix
     ./modules/git.nix
     ./modules/package.nix
+    ./modules/zsh.nix
   ];
 
   home.username = "tabun";

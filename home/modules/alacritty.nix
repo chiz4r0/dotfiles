@@ -2,10 +2,32 @@
 {
   programs.alacritty = {
     enable = true;
-    # settings = {
-    #     terminal.shell = {
-    #     args = ["new-session"  "-A"  "-D" "-s" "main"];
-    #     program = "/etc/profiles/per-user/${config.home.username}/bin/tmux";
-    #   };
-    # };
+    settings = {
+      window.dimensions = {
+        lines = 40;
+        columns = 150;
+      };
+      window.padding = {
+        x = 8;
+        y = 0;
+      };
+      window.opacity = 0.9;
+      window.blur = true;
+      window.title = "Welcome Lah";
+      scrolling.history = 10000;
+      font.normal = {
+        family = "Adwaita Mono";
+        style = "Regular";
+      };
+      font.bold = {
+        family = "Adwaita Mono";
+        style = "Bold";
+      };
+      font.italic = {
+        family = "Adwaita Mono";
+        style = "Italic";
+      };
+      font.size = 10;
+    };
+  };
 }
