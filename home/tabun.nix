@@ -6,6 +6,7 @@
     ./modules/dconf.nix
     ./modules/git.nix
     ./modules/package.nix
+    ./modules/tmux.nix
     ./modules/zsh.nix
   ];
 
