@@ -4,6 +4,7 @@
   imports =
     [ 
       ./hardware-configuration.nix
+      ../../modules/amd.nix
       ../../modules/fonts.nix
       ../../modules/gnome.nix
       ../../modules/hardware.nix
