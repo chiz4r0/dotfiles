@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./modules/alacritty.nix
     ./modules/dconf.nix
     ./modules/git.nix
     ./modules/package.nix
