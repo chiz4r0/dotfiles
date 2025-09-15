@@ -26,9 +26,6 @@
           system = "x86_64-linux";
           modules = [
             ./hosts/nixos/configuration.nix
-            #./modules/system/common.nix
-
-            # Integrasi Home Manager ke dalam NixOS
             home-manager.nixosModules.home-manager
 
             {
