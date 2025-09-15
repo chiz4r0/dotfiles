@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -22,29 +22,22 @@
       }) //
     {
       nixosConfigurations = {
-        my-host = nixpkgs.lib.nixosSystem {
+        nixos= nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/nixos/configuration.nix
-            ./modules/system/common.nix
+            #./modules/system/common.nix
+
+            # Integrasi Home Manager ke dalam NixOS
+            home-manager.nixosModules.home-manager
+
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              home-manager.users.tabun = import ./home/tabun.nix;
+            }
           ];
-        };
-      };
-
-      homeConfigurations = {
-        my-user = home-manager.lib.homeManagerConfiguration {
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
-
-          modules = [
-            ./home/tabun.nix
-            ./modules/home/common.nix
-          ];
-
-          username = "my-user";
-          homeDirectory = "/home/my-user";
         };
       };
     };

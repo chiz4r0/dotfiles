@@ -36,7 +36,10 @@
 
   
   # WM
-  programs.hyprland.enable = true;
+  #programs.hyprland.enable = true;
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   hardware.graphics = {
     enable = true;
@@ -145,6 +148,7 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
 }
 
