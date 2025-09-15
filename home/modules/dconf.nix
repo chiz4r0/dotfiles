@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     gnomeExtensions.blur-my-shell
+    fluent-icon-theme
   ];
 
   dconf.enable = true;
@@ -14,6 +15,7 @@
 
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+      icon-theme = "Fluent";
     };
 
     "org/gnome/mutter" = {
