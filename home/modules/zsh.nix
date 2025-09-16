@@ -24,5 +24,11 @@ in
       plugins = [ "git" ];
       theme = "steeef";
     };
+    initContent = ''
+      # Cek jika tmux belum berjalan, jalankan tmux
+      if [[ -z "$TMUX" ]]; then
+        tmux attach-session -t default || tmux new-session -s default
+      fi
+    '';
   };
 }
