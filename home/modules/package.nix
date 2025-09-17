@@ -1,7 +1,9 @@
 { pkgs, config, ... }:
 {
   home.packages = with pkgs; [
+    alacritty
+    libreoffice
+    mediawriter
     vscode
-    telegram-desktop
   ];
 }

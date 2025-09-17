@@ -27,7 +27,7 @@
         family = "Adwaita Mono";
         style = "Italic";
       };
-      font.size = 10;
+      font.size = 11;
     };
   };
 }
