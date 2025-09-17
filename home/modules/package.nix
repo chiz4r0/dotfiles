@@ -4,6 +4,7 @@
     alacritty
     libreoffice
     mediawriter
+    telegram-desktop
     vscode
   ];
 }
