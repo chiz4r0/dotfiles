@@ -4,6 +4,7 @@
     alacritty
     libreoffice
     mediawriter
+    remmina
     telegram-desktop
     vscode
   ];
