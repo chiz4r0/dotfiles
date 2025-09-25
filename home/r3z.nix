@@ -10,8 +10,8 @@
     ./modules/zsh.nix
   ];
 
-  home.username = "tabun";
-  home.homeDirectory = "/home/tabun";
+  home.username = "r3z";
+  home.homeDirectory = "/home/r3z";
 
   programs.zsh.enable = true;
 

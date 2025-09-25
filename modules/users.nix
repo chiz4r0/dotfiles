@@ -2,7 +2,7 @@
 {
   security.sudo.wheelNeedsPassword = false;
   programs.zsh.enable = true;
-  users.users.tabun = {
+  users.users.r3z = {
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = [ "wheel" "audio" "video" "disk" ]; # Enable ‘sudo’ for the user.
