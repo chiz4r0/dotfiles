@@ -9,8 +9,8 @@
   dconf.settings = {
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
-      picture-uri = "file:///data/Pictures/minimal.jpg";
-      picture-uri-dark = "file:///data/Pictures/minimal.jpg";
+      picture-uri = "file:///data/Pictures/grum.jpg";
+      picture-uri-dark = "file:///data/Pictures/grum.jpg";
     };
 
     "org/gnome/desktop/interface" = {
